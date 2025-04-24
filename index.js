@@ -8,6 +8,7 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 let firstPlaceEl = document.getElementById("first-place");
 let secondPlaceEl = document.getElementById("second-place");
 
+document.getElementById("generate-pass").addEventListener("click", generatePasswords);
 // password object
 let password = {
     length: 15,
@@ -16,10 +17,14 @@ let password = {
 
 // variables
 numOfPasswords = 2
-passwords = []
+let passwords = []
 
 // generate passwords function
 function generatePasswords() {
+    passwords = []
+    firstPlaceEl.innerText = ""
+    firstPlaceEl.innerText = ""
+
     let range = characters.slice()
     if (!password.hasCharactersandNums) {
         range = characters.slice(0, characters.indexOf("z"))
