@@ -86,4 +86,7 @@ button {
     border-radius: 6px;
     color: var(--shinygreen);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
