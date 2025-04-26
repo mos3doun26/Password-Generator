@@ -69,6 +69,7 @@ button {
     border-radius: 6px;
     box-shadow: 0 1 2 0 var(--black);
     margin: 30px 0;
+    font-weight: 500;
 }
 
 .passwords {
