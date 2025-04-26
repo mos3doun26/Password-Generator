@@ -44,6 +44,19 @@ body {
     padding: 100px 60px;
 }
 
+.hero {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dark-light-toggle {
+    background: var(--navy);
+    color: white;
+    border-radius: 30px;
+    width: 90px;
+    height: 45px;
+}
+
 h1 {
     color: var(--black);
     font-weight: 800;
@@ -55,7 +68,7 @@ span {
 }
 
 p {
-    color: #6B7280;
+    color: var(--gray);
     margin-top: 0;
     margin-bottom: 40px;
 }
@@ -70,6 +83,7 @@ button {
     box-shadow: 0 1 2 0 var(--black);
     margin: 30px 0;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .passwords {
