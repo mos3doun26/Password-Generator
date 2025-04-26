@@ -1,38 +1,32 @@
-/* Font -> karla 
-Extra bold
-*/
+:root {
+    /* common colors */
+    --shadow-color: #000000;
+    --rand-pass-bg: #273549;
+    --rand-pass-txt-color: #5DEF92;
+    --green: #10B981;
+}
 
-/* color */
-/* 
-body -> #1C1C1C
-container -> #ECFDF5, W-> 550, H-> 550
-green -> 10B981
-navy -> 273549
-gray -> 6B7280
-black -> 000000
-offwhite -> ECFDF5 */
+[data-theme="light"] {
+    --container-color-bg: #ECFDF5;
+    --h1-color: #000000;
+    --hook-color: #6B7280;
+    --dark-light-toggle-color-bg: #273549;
+    --dark-light-toggle-color-txt: #FFFFFF;
+    --border-color: #D9D9D9;
+}
 
-/* horizontal rule -> color: D5D4D8 */
-
-/* button */
-/* 
-witdth -> uptill now make it fit the content
-padding -> 9 15
-border -> 6px
-shadow -> 0 1 2 0 black
-text color -> white
- */
+[data-theme="dark"] {
+    --container-color-bg: #1F2937;
+    --h1-color: #FFFFFF;
+    --hook-color: #D5D4D8;
+    --dark-light-toggle-color-bg: #ECFDF5;
+    --dark-light-toggle-color-txt: #000000;
+    --border-color: #2F3E53;
+}
 
 body {
     font-family: "Karla", sans-serif;
-    --green: #10B981;
-    --shinygreen: #5DEF92;
-    --gray: #6B7280;
-    --lightgray: #D9D9D9;
-    --black: #000000;
-    --navy: #273549;
-    --lightgreen: #ECFDF5;
-    background: var(--black);
+    background: #000000;
 }
 
 .container {
@@ -40,7 +34,7 @@ body {
     height: 550px;
     margin: 100px auto;
     /* border-radius: 6px; */
-    background: var(--lightgreen);
+    background: var(--container-color-bg);
     padding: 100px 60px;
 }
 
@@ -50,15 +44,15 @@ body {
 }
 
 .dark-light-toggle {
-    background: var(--navy);
-    color: white;
+    background: var(--dark-light-toggle-color-bg);
+    color: var(--dark-light-toggle-color-txt);
     border-radius: 30px;
     width: 90px;
     height: 45px;
 }
 
 h1 {
-    color: var(--black);
+    color: var(--h1-color);
     font-weight: 800;
     margin-bottom: 5px;
 }
@@ -68,7 +62,7 @@ span {
 }
 
 p {
-    color: var(--gray);
+    color: var(--hook-color);
     margin-top: 0;
     margin-bottom: 40px;
 }
@@ -80,7 +74,7 @@ button {
     font-family: "Karla", sans-serif;
     border: none;
     border-radius: 6px;
-    box-shadow: 0 1 2 0 var(--black);
+    box-shadow: 0 1 2 0 var(--shadow-color);
     margin: 30px 0;
     font-weight: 500;
     cursor: pointer;
@@ -91,15 +85,15 @@ button {
     justify-content: space-around;
     gap: 20px;
     padding-top: 30px;
-    border-top: 1px solid var(--lightgray);
+    border-top: 1px solid var(--border-color);
 }
 
 .pass-place {
     width: 265px;
     height: 39px;
-    background: var(--navy);
+    background: var(--rand-pass-bg);
     border-radius: 6px;
-    color: var(--shinygreen);
+    color: var(--rand-pass-txt-color);
     text-align: center;
     display: flex;
     justify-content: center;
