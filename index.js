@@ -80,3 +80,33 @@ function generatePassword() {
     }
     return generatedPass
 }
+
+
+// Switch dark and light.
+
+// locate toggle button
+let toggleBtn = document.getElementById("dark-light-toggle")
+// get current theme
+let currentTheme = document.querySelector("html").getAttribute("data-theme");
+
+document.getElementById("dark-light-toggle").addEventListener("click", function () {
+    // create the new theme
+    let newTheme = currentTheme === "light" ? "dark" : "light";
+    // change the text of the button
+    let newText = newTheme === "light" ? "Dark" : "Light";
+    toggleBtn.innerText = newText
+
+    // set the new theme in data-them attribute in html
+    document.querySelector("html").setAttribute("data-theme", newTheme)
+    // save the them in the local storage.
+    localStorage.setItem("theme", newTheme)
+    currentTheme = newTheme
+})
+
+// Initialize theme on page load
+let savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    document.querySelector("html").setAttribute("data-theme", savedTheme);
+    currentTheme = savedTheme;
+    toggleBtn.innerText = savedTheme === "light" ? "Dark" : "Light";
+}
