@@ -25,10 +25,10 @@
         <p>Never use an insecure password again.</p>
         <button id="generate-pass">Generate Passwords</button>
         <div class="passwords">
-            <div id="first-place" class="pass-place"></div>
-            <div id="second-place" class="pass-place"></div>
+            <div id="first-place" class="pass-place" onclick="copy('first-place')"></div>
+            <div id="second-place" class="pass-place" onclick="copy('second-place')"></div>
         </div>
-
+        <div id="text-copied-message"></div>
         <script src="index.js"></script>
     </div>
 

@@ -7,49 +7,13 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 // locate elements.
 let firstPlaceEl = document.getElementById("first-place");
 let secondPlaceEl = document.getElementById("second-place");
+let textmesssageEl = document.getElementById("text-copied-message")
 
 // set password object
 let password = {
     length: 15,
     hasCharactersandNums: true
 }
-// First Method
-
-// document.getElementById("generate-pass").addEventListener("click", generatePasswords);
-
-// // variables
-// let passwords = []
-
-// // generate passwords function
-// function generatePasswords() {
-//     passwords = []
-//     firstPlaceEl.innerText = ""
-//     firstPlaceEl.innerText = ""
-
-//     let range = characters.slice()
-//     if (!password.hasCharactersandNums) {
-//         range = characters.slice(0, characters.indexOf("z"))
-//     }
-//     // creating 2 passwords
-//     for (let i = 0; i < 2; i++) {
-//         let createdPass = ""
-//         // loop to create each password
-//         for (let j = 0; j < password.length; j++) {
-//             // random number from 0 to the last index of the range.
-//             let randIndex = Math.floor(Math.random() * range.length)
-//             createdPass += range[randIndex]
-//         }
-//         passwords.push(createdPass)
-//         console.log(createdPass)
-//     }
-
-//     // adding the generated passwords to html
-//     firstPlaceEl.textContent = passwords[0]
-//     secondPlaceEl.textContent = passwords[1]
-
-// }
-
-// Second Method
 
 document.getElementById("generate-pass").addEventListener("click", function () {
 
@@ -67,6 +31,7 @@ document.getElementById("generate-pass").addEventListener("click", function () {
 // generate reandom password funciton
 
 function generatePassword() {
+    textmesssageEl.innerText = ""
     // create range of the password based on password has characters and numbers or not.
     let range = characters.slice()
     if (!password.hasCharactersandNums) {
@@ -109,4 +74,26 @@ if (savedTheme) {
     document.querySelector("html").setAttribute("data-theme", savedTheme);
     currentTheme = savedTheme;
     toggleBtn.innerText = savedTheme === "light" ? "Dark" : "Light";
+}
+
+
+// copy password.
+function copy(elementId) {
+
+    let element = document.getElementById(elementId)
+
+    navigator.clipboard.writeText(element.textContent)
+    showCopiedMessage()
+
+}
+
+
+//
+function showCopiedMessage() {
+    textmesssageEl.textContent = "Password is copied!"
+    setTimeout(hide, 2000)
+}
+
+function hide() {
+    textmesssageEl.textContent = ""
 }
